@@ -1,6 +1,7 @@
 /** @jsx React.DOM*/
 
 var React = require('react');
+var Tweets = require('./Tweets.react.js')
 
 module.exports = TweetApp = React.createClass({
   addTweet: function(tweet){
@@ -39,6 +40,7 @@ module.exports = TweetApp = React.createClass({
   render: function(){
     return (
       <div className="tweet-app">
+        <Tweets tweets+{this.state.tweets} />
       </div>
     )
   }
