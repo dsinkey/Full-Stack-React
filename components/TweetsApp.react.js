@@ -21,6 +21,24 @@ module.exports = TweetApp = React.createClass({
 
     request.open('GET', 'page/' + page + '/' + this.state.skip, true);
 
+
+    request.send();
+  },
+
+  loadPagedTweets: function(tweets){
+    var self = this;
+
+    if(tweets.length > 0){
+      var updated = this.state.tweets;
+
+      tweets.forEach(function(tweet){
+        updated.push(tweet);
+
+        self.setState({tweets: updated, paging: false});
+      });
+    } else {
+      self.setState({done: true, paging: false});
+    }
   },
 
   getInitialState: function (props){
