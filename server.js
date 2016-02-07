@@ -20,6 +20,8 @@ var twit = new twitter(config.twitter);
 
 app.get('/', routes.index);
 
+app.get('/page/:page/:skip', routes.page);
+
 app.use("/", express.static(__dirname + "/public"));
 
 var server = http.createServer(app).listen(port, function(){

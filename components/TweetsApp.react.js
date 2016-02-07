@@ -15,13 +15,26 @@ module.exports = TweetApp = React.createClass({
     this.setState({tweets: updated, count: count, skip: skip});
   },
 
+  getPage: function(page){
+    var request = new XMLHttpRequest();
+    var self = this;
+
+    request.open('GET', 'page/' + page + '/' + this.state.skip, true);
+
+  },
+
   getInitialState: function (props){
     props = props || this.props;
 
       return {
         tweets: props.tweets,
-        count: 0
-    }
+        count: 0,
+        page: 0,
+        paging: false,
+        skip, 0,
+        done: false
+    };
+
   },
 
   componentWillReceiveProps: function(newProps, oldProps){
