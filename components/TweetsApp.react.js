@@ -49,7 +49,7 @@ module.exports = TweetApp = React.createClass({
         count: 0,
         page: 0,
         paging: false,
-        skip, 0,
+        skip: 0,
         done: false
     };
 
