@@ -1,4 +1,5 @@
 var express = require('express');
+var expressHandlebars = require('express-handlebars');
 var http = require('http');
 var mongoose = require('mongoose');
 var twitter = require('twitter');
@@ -8,9 +9,14 @@ var streamHandler = require('./utils/streamHandler');
 var app = express();
 var port = process.env.PORT || 8080;
 
+app.engine('handlebars', expressHandlebars({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
 mongoose.connect('mongodb://localhost/react-tweets');
 
 var twit = new twitter(config.twitter);
+
+app.get('/', routes.index);
 
 var server = http.createServer(app).listen(port, function(){
     console.log('Express server listening on port' + port);
