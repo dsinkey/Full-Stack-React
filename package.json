@@ -2,7 +2,7 @@
   "name": "react-tweet",
   "version": "0.1.0",
   "description": "Full-stack app using React and Twitter API",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "express": "^4.9.8",
     "express-handlebars": "^1.1.0",

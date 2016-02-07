@@ -1,7 +1,8 @@
 /** @jsx React.DOM*/
 
 var React = require('react');
-var Tweets = require('./Tweets.react.js')
+var Tweets = require('./Tweets.react.js');
+var NotificationBar = require('./NotificationBar.react.js');
 
 module.exports = TweetApp = React.createClass({
   addTweet: function(tweet){
@@ -18,7 +19,7 @@ module.exports = TweetApp = React.createClass({
     props = props || this.props;
 
       return {
-        tweets. props.tweets
+        tweets: props.tweets,
         count: 0
     }
   },
@@ -40,7 +41,8 @@ module.exports = TweetApp = React.createClass({
   render: function(){
     return (
       <div className="tweet-app">
-        <Tweets tweets+{this.state.tweets} />
+        <Tweets tweets={this.state.tweets} />
+        <NotificationBar count={this.state.count}/>
       </div>
     )
   }

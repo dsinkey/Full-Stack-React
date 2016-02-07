@@ -25,4 +25,4 @@ schema.statics.getTweets = function(callback){
   });
 };
 
-module.exports = mongoose.model('Tweet', schema);
+module.exports = Tweet = mongoose.model('Tweet', schema);
