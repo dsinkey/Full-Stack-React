@@ -10,10 +10,11 @@ var schema = new mongoose.Schema({
     screenname: String
 });
 
-schema.statics.getTweets = function(callback){
+schema.statics.getTweets = function(page, skip, callback){
     var tweets = [];
+    var start = (page * 10) + (skip * 1);
 
-    Tweet.find({}, 'twid active author avatar body date screenname').sort({date: 'desc'}).exec(function(err, docs){
+    Tweet.find({}, 'twid active author avatar body date screenname', {skip: start, limit: 10}).sort({date: 'desc'}).exec(function(err, docs){
       if(!err){
         tweets = docs;
         tweets.forEach(function(tweet){
