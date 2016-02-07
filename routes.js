@@ -5,5 +5,16 @@ var Tweet = require('./models/Tweet.js');
 
 module.exports = {
   index: function(req, res){
+    Tweets.getTweets(function(tweets){
+      var markup = React.renderComponentToString(
+        TweetsApp({
+          tweets: tweets
+        })
+      );
+      res.render('home', {
+        markup: markup;
+        state: JSON.stringify(tweets)
+      });
+    });
   }
 }
