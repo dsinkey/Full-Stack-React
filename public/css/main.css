@@ -1,0 +1,21 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0 0 40px 0;
+    color: white;
+    background: #2c3e50;
+}
+
+.tweets {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.tweet {
+    position: relative;
+    display: block;
+    max-height: 0px;
+    margin: 0;
+    border-radius: 3px;
+}
