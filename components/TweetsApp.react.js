@@ -55,6 +55,17 @@ module.exports = TweetApp = React.createClass({
 
   },
 
+  checkWindowScroll: function(){
+    var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    var scroll = document.body.scrollTop;
+    var scrolled = (height + scroll) > document.body.offsetHeight;
+
+    if(scolled && !this.state.paging && !this.state.done){
+      this.setState({paging: true, page: this.state.page + 1});
+      this.getPage(this.state.page);
+    }
+  },
+
   componentWillReceiveProps: function(newProps, oldProps){
     this.setState(this.getInitialState(newProps));
   },
@@ -67,6 +78,8 @@ module.exports = TweetApp = React.createClass({
     socket.on('tweet', function(data){
       self.andTweet(data);
     });
+
+    window.addEventListener('scroll', this.checkWindowScroll);
   },
 
   render: function(){
