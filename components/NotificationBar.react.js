@@ -7,7 +7,7 @@ module.exports = NotificationBar = React.createClass({
     var count = this.props.count;
     return (
       <div className={"notification-bar" + (count > 0 ? 'active': '')}>
-        <p>There are {count} new tweets! <a href="#top">Click Here to see them.</a></p>
+        <p>There are {count} new tweets! <a href="#top" onClick={this.props.onShowNewTweets}>Click Here to see them.</a></p>
       </div>
     )
   }

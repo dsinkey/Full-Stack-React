@@ -7,7 +7,7 @@ module.exports = Tweet = React.createClass({
     var tweet = this.props.tweet;
 
     return (
-      <li className={"tweet" + (tweet.active ? 'active' : '')}>
+      <li className={"tweet" + (tweet.active ? ' active' : '')}>
         <img src={tweet.avatar} className="avatar"></img>
         <blockquote>
           <cite>

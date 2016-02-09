@@ -18,7 +18,7 @@ schema.statics.getTweets = function(page, skip, callback){
       if(!err){
         tweets = docs;
         tweets.forEach(function(tweet){
-          tweets.active = true;
+          tweet.active = true;
       });
     }
 
