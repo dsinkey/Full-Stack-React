@@ -2,7 +2,8 @@ var Tweet = require('../models/Tweet');
 
 module.exports = function(stream, io){
   stream.on('data', function(data){
-    if (data['user' !== undefined]){
+    if (data['user'] !== undefined){
+      
       var tweet = {
         twid: data['id_str'],
         active: false,

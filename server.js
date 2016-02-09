@@ -8,7 +8,7 @@ var config = require('./config');
 var streamHandler = require('./utils/streamHandler');
 
 var app = express();
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8000;
 
 app.engine('handlebars', expressHandlebars({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');

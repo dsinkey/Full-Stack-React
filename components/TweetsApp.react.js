@@ -86,7 +86,7 @@ module.exports = TweetApp = React.createClass({
     return (
       <div className="tweet-app">
         <Tweets tweets={this.state.tweets} />
-        <NotificationBar count={this.state.count}/>
+        <NotificationBar count={this.state.count} onShowNewTweets={this.onShowNewTweets}/>
       </div>
     )
   }

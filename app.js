@@ -3,9 +3,9 @@
 var React = require('react');
 var TweetsApp = require('./components/TweetsApp.react.js');
 
-var initialState = JSON.parse(document.getElementById('inital-state').innerHTML);
+var initialState = JSON.parse(document.getElementById('initial-state').innerHTML);
 
 React.renderComponent(
-    <TweetsApp tweets={intialState} />
+    <TweetsApp tweets={initialState} />
     document.getElementById('react-app');
 );

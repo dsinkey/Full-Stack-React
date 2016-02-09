@@ -2,21 +2,26 @@
   "name": "react-tweet",
   "version": "0.1.0",
   "description": "Full-stack app using React and Twitter API",
-  "main": "server.js",
+  "main": "app.js",
   "dependencies": {
+    "browserify": "^6.0.3",
     "express": "^4.9.8",
     "express-handlebars": "^1.1.0",
     "mongoose": "^4.2.10",
     "node-jsx": "^0.12.4",
     "react": "^0.13.3",
+    "reactify": "^0.14.1",
     "socket.io": "^1.4.5",
-    "twitter": "^1.2.5"
+    "twitter": "^1.2.5",
+    "uglify-js": "^2.4.24"
   },
   "devDependencies": {
     "nodemon": "^1.8.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "watchify app.js -o public/js/bundle.s -v",
+    "browserify": "browserify app.js | unglifyjs > public/js/bundle.js",
+    "build": "npm run browserify"
   },
   "repository": {
     "type": "git",
